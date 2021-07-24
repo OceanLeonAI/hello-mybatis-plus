@@ -1,6 +1,8 @@
 package com.leon.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.leon.enums.AgeEnum;
+import com.leon.enums.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -34,6 +36,7 @@ public class User implements Serializable {
 
     @TableField(select = true)
     private Integer age;
+//    private AgeEnum age;
 
     private String email;
 
@@ -62,4 +65,9 @@ public class User implements Serializable {
      */
     @Version
     private Integer version;
+
+    private StatusEnum status;
+
+    @TableLogic
+    private Integer deleted;
 }

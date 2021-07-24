@@ -21,7 +21,7 @@ class HelloMybatisPlusApplicationTests {
     private UserMapper userMapper;
 
     @Test
-    void queryAll() {
+    void selectList() {
         userMapper.selectList(null).forEach(System.out::println);
     }
 
@@ -32,7 +32,9 @@ class HelloMybatisPlusApplicationTests {
     void insert() {
         User user = new User();
         user.setName("leon");
+        System.out.println("新增前 user ---> " + user);
         System.out.println(userMapper.insert(user));
+        System.out.println("新增后 user ---> " + user);
     }
 
     /**
@@ -57,7 +59,7 @@ class HelloMybatisPlusApplicationTests {
      */
     @Test
     void deleteById() {
-        System.out.println(userMapper.deleteById("1418871984780226561"));
+        System.out.println(userMapper.deleteById("1418964431543787522"));
     }
 
     /**
