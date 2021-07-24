@@ -73,10 +73,29 @@ class HelloMybatisPlusApplicationTests {
      */
     @Test
     void update() {
-        User user = userMapper.selectById("1418872287160238081");
+        User user = userMapper.selectById("1418881918146269186");
         user.setName("testUpdate");
-        user.setAka("testUpdate");
+//        user.setAka("testUpdate");
         System.out.println(userMapper.updateById(user));
+    }
+
+    /**
+     * 乐观锁
+     */
+    @Test
+    void testOptimisticLockerInnerInterceptor() {
+        // update user ... version = 3 where version = 2
+        User user1 = userMapper.selectById("1418888364506263553");
+        user1.setName("user1-竞争锁-成功");
+
+        // update user ... version = 3 where version = 2
+
+        User user2 = userMapper.selectById("1418888364506263553");
+        user2.setName("user2-竞争锁-成功");
+
+        // FIXME: 此处模拟多线程竞争有缺陷
+        System.out.println(userMapper.updateById(user1));
+        System.out.println(userMapper.updateById(user2));
     }
 
 
