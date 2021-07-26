@@ -43,7 +43,7 @@ class HelloMybatisPlusApplicationTests {
     @Test
     void saveBatch() {
         List<User> userList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             userList.add(
                     User.builder()
                             .name("用户" + i)
