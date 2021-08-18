@@ -9,6 +9,10 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import java.util.Arrays;
 
+/**
+ * 旧版本 mybatis plus 代码生成案例，
+ * 以下代码生成数据库中所有表对应代码
+ */
 public class Main {
     public static void main(String[] args) {
         generateCode();
