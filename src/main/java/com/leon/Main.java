@@ -11,8 +11,8 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-//        generateCode();
-        getSystemProperty(null);
+        generateCode();
+//        getSystemProperty(null);
 
     }
 
@@ -31,7 +31,8 @@ public class Main {
 
         // 全局配置
         GlobalConfig globalConfig = new GlobalConfig.Builder()
-                .outputDir(System.getProperty("user.dir") + "src\\main\\java")
+                .outputDir(System.getProperty("user.dir") + "\\" + "src\\main\\java")
+//                .outputDir("E://mybatis-plus-code-generator/")
                 .openDir(false)
                 .author("OceanLeonAI")
                 .build();

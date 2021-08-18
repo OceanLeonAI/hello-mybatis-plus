@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 import java.util.Scanner;
 
@@ -43,6 +42,7 @@ public class GeneratorCodeConfig {
         GlobalConfig globalConfig = new GlobalConfig
                 .Builder()
                 .outputDir(projectPath + "/" + moduleName + "/src/main/java")
+//                .outputDir(projectPath + "/src/main/java") // 注意路径
                 .author("OceanLeonAI")
                 .openDir(false)
                 .build();
@@ -55,9 +55,14 @@ public class GeneratorCodeConfig {
                 .build();
 
         // 配置模板
+        // 如果模板引擎是 freemarker
+        // String mapperXmlTemplate = "/templates/mapper.xml.ftl";
+        // 如果模板引擎是 velocity
+        String mapperXmlTemplate = "/templates/mapper.xml.vm";
         TemplateConfig templateConfig = new TemplateConfig
                 .Builder()
-                .mapperXml(null)
+                // .mapperXml(null) // null 不生成 xml
+                .mapperXml(mapperXmlTemplate)
                 .build();
 
         // 策略配置
@@ -72,6 +77,8 @@ public class GeneratorCodeConfig {
         mpg.packageInfo(packageConfig);
         mpg.template(templateConfig);
         mpg.strategy(strategyConfig);
-        mpg.execute(new FreemarkerTemplateEngine());
+        // 此处不指定模板引擎，默认用 VelocityTemplateEngine
+        // mpg.execute(new FreemarkerTemplateEngine()); // 如果用 freemarker， pom 需要引入相关依赖
+        mpg.execute();
     }
 }
