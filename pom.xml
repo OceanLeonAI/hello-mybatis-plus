@@ -57,11 +57,11 @@
             <version>3.5.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.velocity</groupId>-->
-<!--            <artifactId>velocity</artifactId>-->
-<!--            <version>1.7</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.velocity</groupId>-->
+        <!--            <artifactId>velocity</artifactId>-->
+        <!--            <version>1.7</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity-engine-core -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -76,12 +76,17 @@
             <version>2.3.31</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.ibeetl/beetl -->
-<!--        <dependency>-->
-<!--            <groupId>com.ibeetl</groupId>-->
-<!--            <artifactId>beetl</artifactId>-->
-<!--            <version>3.4.0.RELEASE</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.ibeetl</groupId>-->
+        <!--            <artifactId>beetl</artifactId>-->
+        <!--            <version>3.4.0.RELEASE</version>-->
+        <!--        </dependency>-->
         <!-- 代码生成   end -->
+        <!-- Oracle 驱动 -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
